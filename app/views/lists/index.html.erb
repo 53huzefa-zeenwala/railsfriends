@@ -1,0 +1,25 @@
+<h1>Lists</h1>
+<div id="lists">
+<table class="table table-striped table-bordered table-hover">
+<thead class="table-dark">
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Email</th>
+<th scope="col">Phone</th>
+    <th scope="col">Twitter</th>
+    <th scope="col">Created by</th>
+</tr>
+</thead>
+    <tbody class="table-group-divider">
+  <% @lists.each do |list| %>
+      <% if list.user == current_user %>
+          <tr id="<%= dom_id list %>">
+            <%= render list %>
+          </tr>
+      <% end %>
+  <% end %>
+    </tbody>
+</table>
+</div>
+
+<%= link_to "New list", new_list_path , class:"btn btn-secondary" %>

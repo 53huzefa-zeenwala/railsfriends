@@ -1,0 +1,21 @@
+<div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title"><%= @list.first_name %> <%= @list.last_name %></h5>
+    <p class="card-text">
+    <strong>Email address :</strong> <%= @list.email %>
+    </p>
+    <p class="card-text">
+    <strong>Phone Number :</strong> <%= @list.phone %> 
+    </p>
+    <p class="card-text">
+    <strong>Twitter Account :</strong> <%= @list.twitter %> 
+    </p>
+    <div>
+       <%= link_to "Edit this list", edit_list_path(@list) , class:"btn btn-secondary" %> 
+       <%= link_to "Back to lists", lists_path , class:"btn btn-secondary" %>
+       <%= button_to "Destroy this list" , @list, method: :delete , class:"btn btn-warning my-1" %>     
+    </div>
+  </div>
+</div>
+
+
